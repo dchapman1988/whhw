@@ -1,0 +1,15 @@
+%h1 What had happened was...
+
+= form_for @story, :url => stories_path do |f| 
+  = f.label :title
+  = f.text_field :title
+  %br
+  %p What had happened was...
+  = f.text_area :body
+  %br
+  = f.submit
+
+- @stories.each do |story|
+  %h3= story.title
+  %p= story.body
+
